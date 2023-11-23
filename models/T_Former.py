@@ -84,7 +84,7 @@ class TFormer(nn.Module):
         super().__init__()
         self.cls_token = nn.Parameter(torch.randn(1, 1, dim))
         self.pos_embedding = nn.Parameter(torch.randn(1, num_patches+1, dim))
-        self.spatial_transformer = Transformer(dim, depth, heads, dim_head, mlp_dim, dropout)
+        self.temporal_transformer = Transformer(dim, depth, heads, dim_head, mlp_dim, dropout)
 
     def forward(self, x):
         x = x.contiguous().view(-1, 16, 512)
@@ -92,7 +92,7 @@ class TFormer(nn.Module):
         cls_tokens = repeat(self.cls_token, '() n d -> b n d', b=b)
         x = torch.cat((cls_tokens, x), dim=1)
         x = x + self.pos_embedding[:, :(n+1)]
-        x = self.spatial_transformer(x)
+        x = self.temporal_transformer(x)
         x = x[:, 0]
 
         return x
