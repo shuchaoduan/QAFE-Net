@@ -27,15 +27,14 @@ class Parkinson_former(torch.utils.data.Dataset):
         self.clip_len = args.clip_len
         self.data_root = args.data_root
         self.landmarks_root = args.landmarks_root
-        self.split_path = os.path.join(self.data_root, 'PFED5_train_30.csv')
+        self.split_path = os.path.join(self.data_root, 'PFED5_train.csv')
         self.split_data = pd.read_csv(self.split_path)
         self.split = np.array(self.split_data)
-        # load one trained actions
         self.split = self.split[self.split[:, 3] == self.class_idx].tolist()  # stored nums are in str
 
 
         if self.subset == 'test':
-            self.split_path_test = os.path.join(self.data_root, 'PFED5_test_30.csv')
+            self.split_path_test = os.path.join(self.data_root, 'PFED5_test.csv')
             self.split_test = pd.read_csv(self.split_path_test)
             self.split_test = np.array(self.split_test)
             self.split_test = self.split_test[self.split_test[:, 3] == self.class_idx].tolist()
@@ -145,14 +144,14 @@ class Parkinson_former(torch.utils.data.Dataset):
             if self.subset == 'train':
                 trans = video_transforms.Compose([
                     video_transforms.RandomHorizontalFlip(),
-                    video_transforms.Resize((256, 256)),
+                    # video_transforms.Resize((256, 256)),
                     video_transforms.RandomCrop(224),
                     volume_transforms.ClipToTensor(),
                     video_transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
                 ])
             elif self.subset == 'test':
                 trans = video_transforms.Compose([
-                    video_transforms.Resize((256, 256)),
+                    # video_transforms.Resize((256, 256)),
                     video_transforms.CenterCrop(224),
                     volume_transforms.ClipToTensor(),
                     video_transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
