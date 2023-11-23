@@ -55,7 +55,7 @@ If you find our work useful in your research, please consider citing:
 
 
 ## Acknowlegement
-Our implementation and experiments are built on top of [zengqunzhao/Former-DFER](https://github.com/zengqunzhao/Former-DFER). We thank the authors who made their code public, which tremendously accelerates our project progress. 
+Our implementation and experiments are built on top of [Former-DFER](https://github.com/zengqunzhao/Former-DFER). We thank the authors who made their code public, which tremendously accelerates our project progress. 
 
 
 
