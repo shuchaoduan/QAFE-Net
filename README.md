@@ -1,5 +1,5 @@
 # QAFE-Net: Quality Assessment of Facial Expressions with Landmark Heatmaps
-
+[ArXiv version]()
 
 ![Pipeline](resources/pipeline.pdf) 
 
@@ -28,7 +28,7 @@ and [Albumentation library](https://albumentations.ai) for normalising the landm
 
 -3: Generate landmark heatmaps for corresponding video clips.
 
-### Training on PFED5
+### Training and Testing on PFED5
 run ```python main_PFED5.py --gpu 0,1 --batch_size 4 --epoch 100```
 
 ### Pretrained model weights
@@ -40,11 +40,8 @@ Dowonload pretrain weights (RGB encoder and heatmap encoder) from [here](https:/
 		 pose_only.pth
 	```
 
-
-### Evaluation Results
+ ### Evaluation Results
 Will be updated...
-
-
 
 ## Citations
 If you find our work useful in your research, please consider citing:
@@ -53,9 +50,9 @@ If you find our work useful in your research, please consider citing:
 
 ```
 
-
 ## Acknowlegement
 Our implementation and experiments are built on top of [Former-DFER](https://github.com/zengqunzhao/Former-DFER). We thank the authors who made their code public, which tremendously accelerates our project progress. 
+
 
 
 
