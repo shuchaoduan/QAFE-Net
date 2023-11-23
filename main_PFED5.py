@@ -32,9 +32,7 @@ parser.add_argument('--class_idx',type=int,default=0,choices=[0, 1, 2, 3, 4], he
 parser.add_argument('--clip_len',type=int,default=80, help='input length')
 parser.add_argument('--data_root',type=str,default='/path/PFED5/frames', help='data path')
 parser.add_argument('--landmarks_root',type=str,default='/path/PFED5/landmarks_heatmap', help='landmarks path')
-parser.add_argument('--avreage_times',type=int,help='sample frames in X times for inference',default=10)
 parser.add_argument('--exp_name',type=str,help='path to save tensorboard curve',default='test')
-parser.add_argument('--seed',type=int,help='manual seed',default=1)
 parser.add_argument('-j', '--workers', default=4, type=int, metavar='N', help='number of data loading workers')
 parser.add_argument('--epochs', default=100, type=int, metavar='N', help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N', help='manual epoch number (useful on restarts)')
@@ -70,11 +68,10 @@ def init_seed(args):
     """
     Set random seed for torch and numpy.
     """
-    random.seed(args.seed)
-    np.random.seed(args.seed)
-    torch.manual_seed(args.seed)
-
-    torch.cuda.manual_seed_all(args.seed)
+    # random.seed(args.seed)
+    # np.random.seed(args.seed)
+    # torch.manual_seed(args.seed)
+    # torch.cuda.manual_seed_all(args.seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
@@ -104,7 +101,12 @@ def main():
     pre_trained_dict = torch.load(model_pretrained_path)
     for k, v in pre_trained_dict['state_dict'].items():
         name = k[7:]
-        new_state_dict[name] = v
+        if 't_former.spatial_transformer' in name:
+            new_k = name.replace('t_former.spatial_transformer', 't_former.temporal_transformer')
+            new_state_dict[new_k] = v
+        else:
+            new_state_dict[name] = v
+    
     new_state_dict.pop('fc.weight')
     new_state_dict.pop('fc.bias')
     model.load_state_dict(new_state_dict)
@@ -427,28 +429,12 @@ class RecorderMeter(object):
         plt.xlabel('the training epoch', fontsize=16)
         plt.ylabel('accuracy', fontsize=16)
 
-        y_axis[:] = self.epoch_losses_v[:, 0]
-        plt.plot(x_axis, y_axis, color='g', linestyle='-', label='train-loss-v-x50', lw=2)
-        plt.legend(loc=4, fontsize=legend_fontsize)
-
-        y_axis[:] = self.epoch_losses_v[:, 1]
-        plt.plot(x_axis, y_axis, color='y', linestyle='-', label='valid-loss-v-x50', lw=2)
-        plt.legend(loc=4, fontsize=legend_fontsize)
-
-        y_axis[:] = self.epoch_losses_l[:, 0]
-        plt.plot(x_axis, y_axis, color='g', linestyle='--', label='train-loss-l-x50', lw=2)
-        plt.legend(loc=4, fontsize=legend_fontsize)
-
-        y_axis[:] = self.epoch_losses_l[:, 1]
-        plt.plot(x_axis, y_axis, color='y', linestyle='--', label='valid-loss-l-x50', lw=2)
-        plt.legend(loc=4, fontsize=legend_fontsize)
-
         y_axis[:] = self.epoch_losses[:, 0]
-        plt.plot(x_axis, y_axis, color='g', linestyle=':', label='train-loss-x50', lw=2)
+        plt.plot(x_axis, y_axis, color='g', linestyle='-', label='train-loss-x50', lw=2)
         plt.legend(loc=4, fontsize=legend_fontsize)
 
         y_axis[:] = self.epoch_losses[:, 1]
-        plt.plot(x_axis, y_axis, color='y', linestyle=':', label='valid-loss-x50', lw=2)
+        plt.plot(x_axis, y_axis, color='y', linestyle='-', label='valid-loss-x50', lw=2)
         plt.legend(loc=4, fontsize=legend_fontsize)
 
         if save_path is not None:

@@ -18,7 +18,7 @@ def gen_an_aug(results, sigma=1):
             hmap = generate_heatmap(img_h, img_w, kps, sigma, max_values)
             combined_map = np.sum(hmap, axis=0)
             # Apply Gaussian blur to smooth the combined heatmap
-            smoothed_heatmap = cv2.GaussianBlur(combined_map, (21, 21), sigmaX=0)
+            smoothed_heatmap = cv2.GaussianBlur(combined_map, (7, 7), sigmaX=0)
             # Normalize the smoothed heatmap
             smoothed_heatmap /= np.max(smoothed_heatmap)
             # Convert the smoothed heatmap to an image
