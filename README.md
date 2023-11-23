@@ -12,12 +12,7 @@ PFED5 is a Parkinson’s disease (PD) dataset for facial expression quality asse
 
 ## Get Started
 ### Requirements
-- pytroch >= 1.3.0
-- tensorboardX
-- cv2
-- scipy
-- einops 
-- [torch_videovision](https://github.com/hassony2/torch_videovision)
+pytroch >= 1.3.0, tensorboardX, cv2, scipy, einops, [torch_videovision](https://github.com/hassony2/torch_videovision)
 
 ### Data Preparation
 
