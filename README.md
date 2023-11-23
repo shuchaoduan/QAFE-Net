@@ -1,7 +1,7 @@
 # QAFE-Net: Quality Assessment of Facial Expressions with Landmark Heatmaps
 
 
-![Pipeline](https://github.com/shuchaoduan/QAFE-Net/blob/main/resources/pipeline.pdf) 
+![Pipeline](resources/pipeline.pdf) 
 
 ## PFED5 
 
