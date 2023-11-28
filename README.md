@@ -1,6 +1,9 @@
-# QAFE-Net: Quality Assessment of Facial Expressions with Landmark Heatmaps
-[ArXiv version]()
+# QAFE-Net
 
+This is the PyTorch implementation for QAFE-Net: Quality Assessment of Facial Expressions with Landmark Heatmaps
+[arXiv version]()
+
+We propose a novel landmark-guided approach, QAFE-Net, that combines temporal landmark heatmaps with RGB data to capture small facial muscle movements that are encoded and mapped to severity scores.
 ![Pipeline](resources/pipeline.pdf) 
 
 ## PFED5 
@@ -36,7 +39,7 @@ Dowonload pretrain weights (RGB encoder and heatmap encoder) from [here](https:/
 	```
 
  ### Evaluation Results
-Will be updated...
+![Performance]()
 
 ## Citations
 If you find our work useful in your research, please consider citing:
