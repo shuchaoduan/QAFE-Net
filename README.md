@@ -42,7 +42,7 @@ Download pretrain weights (RGB encoder and heatmap encoder) from [here](https://
 ![Performance]()
 
 ## Citations
-If you find our work useful in your research, please consider citing:
+If you find our work useful in your research, please consider giving it a star ⭐ and citing our paper in your work:
 
 ```bibtex
 
