@@ -30,7 +30,7 @@ and [Albumentation library](https://albumentations.ai) for normalising the landm
 run ```python main_PFED5.py --gpu 0,1 --batch_size 4 --epoch 100```
 
 ### Pretrained Weights
-Dowonload pretrain weights (RGB encoder and heatmap encoder) from [here](https://github.com/shuchaoduan/QAFE-Net/models/pretrain). Put entire `pretrain` folder under `models` folder.
+Download pretrain weights (RGB encoder and heatmap encoder) from [here](https://github.com/shuchaoduan/QAFE-Net/models/pretrain). Put entire `pretrain` folder under `models` folder.
 
 	```
 	- models/pretrain/
@@ -49,7 +49,7 @@ If you find our work useful in your research, please consider citing:
 ```
 
 ## Acknowlegement
-Our implementation and experiments are built on top of [Former-DFER](https://github.com/zengqunzhao/Former-DFER). We thank the authors who made their code public, which tremendously accelerates our project progress. 
+Our implementation and experiments are built on top of [Former-DFER](https://github.com/zengqunzhao/Former-DFER). We thank the authors who made their code public, which tremendously accelerates our project progress. We also would like to gratefully acknowledge the contribution of the Parkinson’s study participants. The clinical trial from which the video data of the people with Parkinson’s was sourced was funded by Parkinson’s UK (Grant J-1102), with support from Cure Parkinson’s.
 
 
 
