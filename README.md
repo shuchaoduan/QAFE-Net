@@ -4,11 +4,11 @@ This is the PyTorch implementation for QAFE-Net: Quality Assessment of Facial Ex
 [arXiv version]()
 
 We propose a novel landmark-guided approach, QAFE-Net, that combines temporal landmark heatmaps with RGB data to capture small facial muscle movements that are encoded and mapped to severity scores.
-![Pipeline](resources/pipeline.pdf) 
+![Pipeline](resources/pipeline.png) 
 
 ## PFED5 Dataset
 
-![PFED5](resources/PFED5.pdf)
+![PFED5](resources/PFED5.png)
 
 
 PFED5 is a Parkinson’s disease (PD) dataset for facial expression quality assessment. Videos were recorded using a single RGB camera from 41 PD patients performed five different facial expressions including sit at rest, smile, frown, squeeze eyes tightly, and clench teeth in clinical settings. The trained rater assigned a score for each expression, based on the protocols of MDS-UPDRS, varying between 0 and 4 depending on the level of severity. 
