@@ -4,7 +4,7 @@ This is the PyTorch implementation for QAFE-Net: Quality Assessment of Facial Ex
 [arXiv version]()
 
 We propose a novel landmark-guided approach, QAFE-Net, that combines temporal landmark heatmaps with RGB data to capture small facial muscle movements that are encoded and mapped to severity scores.
-<div align=center><img width="150" height="150" src="resources/pipeline.png">
+<div align=center><img width="668" height="230" src="resources/pipeline.png">
 
 ## PFED5 Dataset
 
