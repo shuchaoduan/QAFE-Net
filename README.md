@@ -39,6 +39,7 @@ Download pretrain weights (RGB encoder and heatmap encoder) from [here](https://
 	```
 
  ### Evaluation Results
+ Comparative Spearman's Rank Correlation results of QAFE-Net with SOTA AQA methods on PFED5
 ![Performance](resources/pd_results.png)
 
 ## Citations
