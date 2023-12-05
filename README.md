@@ -45,13 +45,15 @@ Download pretrain weights (RGB encoder and heatmap encoder) from [here](https://
 ## Citations
 If you find our work useful in your research, please consider giving it a star ⭐ and citing our paper in your work:
 
-```@misc{duan2023qafenet,
+```
+@misc{duan2023qafenet,
       title={QAFE-Net: Quality Assessment of Facial Expressions with Landmark Heatmaps}, 
       author={Shuchao Duan and Amirhossein Dadashzadeh and Alan Whone and Majid Mirmehdi},
       year={2023},
       eprint={2312.00856},
       archivePrefix={arXiv},
-      primaryClass={cs.CV}}
+      primaryClass={cs.CV}
+}
 
 ```
 
