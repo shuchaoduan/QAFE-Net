@@ -30,7 +30,7 @@ and [Albumentation library](https://albumentations.ai) for normalising the landm
 run ```python main_PFED5.py --gpu 0,1 --batch_size 4 --epoch 100```
 
 ### Pretrained Weights
-Download pretrain weights (RGB encoder and heatmap encoder) from [here](https://github.com/shuchaoduan/QAFE-Net/models/pretrain). Put entire `pretrain` folder under `models` folder.
+Download pretrain weights (RGB encoder and heatmap encoder) from [Google Drive](https://drive.google.com/drive/folders/1tq1s3uoXiV8ZohrUtuHgJgaZwfGbjWY-?usp=drive_link). Put entire `pretrain` folder under `models` folder.
 
 	```
 	- models/pretrain/
