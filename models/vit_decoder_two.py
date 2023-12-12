@@ -82,13 +82,13 @@ class DecoderBlock(nn.Module):
         self.mlp = Mlp(in_features=dim, hidden_features=mlp_hidden_dim, act_layer=act_layer, drop=drop)
 
     def forward(self, x):
-        x_frame = x[:, :self.img_dim, :]
-        x_heatmap = x[:, self.img_dim:, :]
+        x_1 = x[:, :self.img_dim, :]
+        x_2 = x[:, self.img_dim:, :]
 
-        x_frame = x_frame + self.drop_path(self.attn(self.norm_q(x_frame), self.norm_v(x_heatmap)))
+        x_frame = x_1 + self.drop_path(self.attn(self.norm_q(x_1), self.norm_v(x_2)))
         x_frame = x_frame + self.drop_path(self.mlp(self.norm2(x_frame)))
 
-        x_heatmap = x_heatmap + self.drop_path(self.attn(self.norm_q(x_heatmap), self.norm_v(x_frame)))
+        x_heatmap = x_2 + self.drop_path(self.attn(self.norm_q(x_2), self.norm_v(x_1)))
         x_heatmap = x_heatmap + self.drop_path(self.mlp(self.norm2(x_heatmap)))
         x = torch.cat((x_frame, x_heatmap), dim=1)
 
