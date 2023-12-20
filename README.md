@@ -19,12 +19,14 @@ pytroch >= 1.3.0, tensorboardX, cv2, scipy, einops, [torch_videovision](https://
 
 ### Data Preparation
 
-1: Download PFED5 dataset. To access the PFED5 dataset, please complete and sign the [PFED5 request form](dataset/PFED5_Request_Form.docx) and forward it to shuchao.duan@bristol.ac.uk. By submitting your application, you acknowledge and confirm that you have read and understood the relevant notice. Upon receiving your request, we will promptly respond with the necessary link and guidelines.
+1: Download PFED5 dataset. To access the PFED5 dataset, please complete and sign the [PFED5 request form](dataset/PFED5_Request_Form.docx) and forward it to shuchao.duan@bristol.ac.uk. By submitting your application, you acknowledge and confirm that you have read and understood the relevant notice. Upon receiving your request, we will promptly respond with the necessary link and guidelines. Please note that ONLY faculty members can request for their team to be granted access to the dataset.
 
-2: We adopt SCRFD from [InsightFace](https://insightface.ai) for face detection and landmark estimation,
+2: Download [UNBC-McMaster](https://www.jeffcohn.net/Resources/) dataset. 
+
+3: We adopt SCRFD from [InsightFace](https://insightface.ai) for face detection and landmark estimation,
 and [Albumentation library](https://albumentations.ai) for normalising the landmark positions to cropped face regions.
 
-3: Generate landmark heatmaps for corresponding video clips.
+4: Generate landmark heatmaps for corresponding video clips.
 
 ### Training and Testing on PFED5
 run ```python main_PFED5.py --gpu 0,1 --batch_size 4 --epoch 100```
