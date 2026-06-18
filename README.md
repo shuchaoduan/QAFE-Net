@@ -60,6 +60,13 @@ If you find our work useful in your research, please consider giving it a star â
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
+@INPROCEEDINGS{tramp-former,
+  title={Trajectory-guided Motion Perception for Facial Expression Quality Assessment in Neurological Disorders},
+  author={Shuchao Duan and Amirhossein Dadashzadeh and Alan Whone and Majid Mirmehdi},
+  booktitle={2025 IEEE 19th International Conference on Automatic Face and Gesture Recognition (FG)},
+  year={2025},
+  doi={10.1109/FG61629.2025.11099263}
+}
 
 ```
 
